@@ -6,6 +6,15 @@ function recupValeurPrenom(){
 		}
 		var url = "/rechercher/prenom/" + valeurPrenom
 		return window.location.replace(url);
+	}
+
+function recupValeurNom(){
+		var valeurNom = document.querySelector(".valNom").value;
+		if(valeurNom == ""){
+			valeurNom = "vide"
+		}
+		var url = "/rechercher/nom/" + valeurNom
+		return window.location.replace(url);
 	}		
 </script>
 
