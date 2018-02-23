@@ -1,7 +1,9 @@
 
-<div class="rechercheMobile"><form class="formuRecherch" action = "http://127.0.0.1:8081/rechercher" method = "POST">
-Recherche par prénom: <input type = "text" name = "prenom"> <br>
-Recherche par nom: <input type = "text" name = "nom">
-Recherche par téléphone: <input type = "text" name = "telephone"> <br>
- <button type = "submit"><i class="fas fa-search"></i></button></div>
+
+Recherche par prenom: <input type = "text" name = "prenom" class="valPre">
+ <button type = "submit" class="envoiRecherche" onclick="recupValeurPrenom()"><i class="fas fa-search"></i></a></button> <br>
+Recherche par nom: <input type = "text" name = "nom" class="valNom">
+ <button type = "submit" class="envoiRecherche" onclick="recupValeurNom()"><i class="fas fa-search"></i></button> <br>
+Recherche par téléphone: <input type = "text" name = "telephone" class="valTel" placeholder="xxx-xxx-xxxx">
+ <button type = "submit" class="envoiRecherche" onclick="recupValeurTel()"><i class="fas fa-search"></i></button>
 
