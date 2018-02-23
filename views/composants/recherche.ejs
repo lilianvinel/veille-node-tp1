@@ -7,3 +7,51 @@ Recherche par nom: <input type = "text" name = "nom" class="valNom">
 Recherche par téléphone: <input type = "text" name = "telephone" class="valTel" placeholder="xxx-xxx-xxxx">
  <button type = "submit" class="envoiRecherche" onclick="recupValeurTel()"><i class="fas fa-search"></i></button>
 
+<table class="tableau">
+ <% adresses.forEach(elm => {%>
+ <tr>
+ <td class='id'><%= elm._id %></td>
+ <td class='nom' contenteditable='true'><%= elm.nom %></td>
+ <td class='prenom' contenteditable='true'><%= elm.prenom %></td>
+ <td class='tel' contenteditable='true'><%= elm.telephone %></td>
+ <td class='supprimer'><a href="/detruire/<%= elm._id %>"><i class="fas fa-trash-alt"></i></a></td>
+ <td class='sauvegarder'><a href="#"><i class="far fa-save"></i></a></td>
+ </tr>
+ <% }) %>
+ </table>
+
+ <form class='mon_formulaire' action="/modifier" name='mon_formulaire' id='mon_formulaire_modifier' method="POST" >
+ <input type = "hidden" placeholder="_id" name = "_id">
+ <input type = "hidden" placeholder="Nom" name = "nom"> 
+ <input type = "hidden" placeholder="Prénom" name = "prenom">
+ <input type = "hidden" placeholder="Téléphone" name = "telephone">
+</form>
+
+<script type="text/javascript">
+ let elmSauver = document.querySelectorAll('.sauver')
+ console.log('elmSauver = ' + elmSauver.length)
+ for (elm of elmSauver)
+ {
+ elm.addEventListener('click', function(){
+
+ let laLigne = this.parentNode.parentNode
+ let id = laLigne.children[0].innerHTML
+ let nom = laLigne.children[1].innerHTML
+ let prenom = laLigne.children[2].innerHTML
+ let telephone = laLigne.children[3].innerHTML
+ let courriel = laLigne.children[4].innerHTML
+
+let elmForm = document.getElementById('mon_formulaire_modifier')
+ console.log(elmForm.tagName)
+ let elmInput = elmForm.querySelectorAll('input')
+ elmInput[0].value = id
+ elmInput[1].value = nom
+ elmInput[2].value = prenom
+ elmInput[3].value = telephone
+ elmInput[4].value = courriel
+
+elmForm.submit()
+
+ })
+ } 
+</script>
