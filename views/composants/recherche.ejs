@@ -1,4 +1,13 @@
-
+<script type="text/javascript">
+function recupValeurPrenom(){
+		var valeurPrenom = document.querySelector(".valPre").value;
+		if(valeurPrenom == ""){
+			valeurPrenom = "vide"
+		}
+		var url = "/rechercher/prenom/" + valeurPrenom
+		return window.location.replace(url);
+	}		
+</script>
 
 Recherche par prenom: <input type = "text" name = "prenom" class="valPre">
  <button type = "submit" class="envoiRecherche" onclick="recupValeurPrenom()"><i class="fas fa-search"></i></a></button> <br>
