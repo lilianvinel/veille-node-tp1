@@ -11,16 +11,21 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs'); // générateur de template
 
-app.get('/accueil', function (req, res) {
+app.get('/accueil', (req, res) => {
  res.render('accueil.ejs');
 })
 
-app.get('/ajout', function (req, res) {
+app.get('/ajout', (req, res) => {
  res.render('ajout.ejs');
+})
+
+app.get('/rechercher', (req, res) => {
+ res.render('rechercher.ejs');
 })
 
 app.get('/adresses', (req, res) => {
  
+console.log(req.body)
  var cursor = db.collection('adresse')
                 .find().toArray(function(err, resultat){
  if (err) return console.log(err)
@@ -34,27 +39,16 @@ app.post('/ajout',  (req, res) => {
 // on utilise l'objet req.body pour récupérer les données POST
 db.collection('adresse').save(req.body, (err, result) => {
  if (err) return console.log(err)
- console.log('sauvegarder dans la BD')
  res.redirect('/adresses')
  })
 
 })
 
-/*app.post('/peupler',  (req, res) => {
- // Preparer l'output en format JSON
-// on utilise l'objet req.body pour récupérer les données POST
-db.collection('adresse').save(req.body, (err, result) => {
- if (err) return console.log(err)
- console.log('sauvegarder dans la BD')
- res.redirect('/adresses')
- })
 
-})*/
 
 app.get('/peupler', (req, res) => {
 	db.collection('adresse').save(JSON.parse(peupler()), (err, result) => {
  		if (err) return console.log(err)
- 		console.log('sauvegarder dans la BD')
  		res.redirect('/adresses')
  })
 })
