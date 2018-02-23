@@ -51,8 +51,11 @@ app.get('/rechercher/:attribut/:valeur',  (req, res) => {
 	let attribut = '"'+ req.params.attribut +'"'
 
 	let valeur = '"'+ req.params.valeur +'"'
+	console.log(valeur);
+
+	let recherche =JSON.parse('{'+ attribut+':'+valeur+'}')
 // on utilise l'objet req.body pour récupérer les données POST
-let cursor = db.collection('adresse').find(
+let cursor = db.collection('adresse').find(recherche
 ).toArray((err, resultat) => {
 
 		res.render('rechercher.ejs', {adresses: resultat, attribut, valeur})
