@@ -15,10 +15,6 @@ app.get('/accueil', (req, res) => {
  res.render('accueil.ejs');
 })
 
-app.get('/ajout', (req, res) => {
- res.render('ajout.ejs');
-})
-
 app.get('/rechercher', (req, res) => {
 	let cursor = db.collection('adresse').find({nom:"rien"}).toArray((err, resultat) => {
 
@@ -37,7 +33,7 @@ console.log(req.body)
  }) 
 })
 
-app.post('/ajout',  (req, res) => {
+app.post('/accueil',  (req, res) => {
  // Preparer l'output en format JSON
 // on utilise l'objet req.body pour récupérer les données POST
 db.collection('adresse').save(req.body, (err, result) => {
