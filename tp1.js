@@ -20,14 +20,17 @@ app.get('/ajout', (req, res) => {
 })
 
 app.get('/rechercher', (req, res) => {
- res.render('rechercher.ejs');
+	let cursor = db.collection('adresse').find({nom:"rien"}).toArray((err, resultat) => {
+
+		res.render('rechercher.ejs', {adresses: resultat})
+	})
 })
 
 app.get('/adresses', (req, res) => {
  
 console.log(req.body)
  var cursor = db.collection('adresse')
-                .find().toArray(function(err, resultat){
+                .find().toArray((err, resultat) => {
  if (err) return console.log(err)
  // transfert du contenu vers la vue adresses.ejs (renders)
  res.render('membres.ejs', {adresses: resultat});
@@ -44,7 +47,17 @@ db.collection('adresse').save(req.body, (err, result) => {
 
 })
 
+app.get('/rechercher/:attribut/:valeur',  (req, res) => {
+	let attribut = '"'+ req.params.attribut +'"'
 
+	let valeur = '"'+ req.params.valeur +'"'
+// on utilise l'objet req.body pour récupérer les données POST
+let cursor = db.collection('adresse').find(
+).toArray((err, resultat) => {
+
+		res.render('rechercher.ejs', {adresses: resultat, attribut, valeur})
+	})
+})
 
 app.get('/peupler', (req, res) => {
 	db.collection('adresse').save(JSON.parse(peupler()), (err, result) => {
