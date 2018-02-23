@@ -1,5 +1,13 @@
 @charset "UTF-8";
 /*============= Styles généraux ================*/
+/* =======CHARTE DES GRANDEURS =======
+MOBILE : jusqu'à 640px;
+TABLETTE : entre 641px et 1024px;
+GRANDS ÉCRANS : plus que 1025px;
+*/
+/*=========================== STYLES MOBILES ======*/
+/*=========================== STYLES TABLETTE ======*/
+/*=========================== STYLES GRANDS ÉCRANS ======*/
 body {
   margin: 0;
   background-color: #f7f7f7;
@@ -36,7 +44,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #333333;
 }
 li {
   float: left;
@@ -49,7 +57,7 @@ li a {
   text-decoration: none;
 }
 li a:hover {
-  background-color: #111;
+  background-color: #111111;
 }
 input[type=text] {
   padding: 12px 20px;
@@ -68,23 +76,24 @@ table {
   border-collapse: collapse;
   text-align: center;
 }
-table td,
-table th {
+table td {
   border: 1px solid #ddd;
   padding: 6px;
 }
-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-table tr:hover {
-  background-color: #ddd;
-}
 table th {
+  border: 1px solid #ddd;
+  padding: 6px;
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: left;
   background-color: #4a4a4a;
   text-align: center;
+}
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+table tr:hover {
+  background-color: #dddddd;
 }
 .propriete {
   text-align: center;
@@ -94,7 +103,10 @@ a {
   color: white;
   font-weight: bold;
 }
-.sauvegarder,
+.sauvegarder {
+  padding: 3px;
+  font-size: 20px;
+}
 .supprimer {
   padding: 3px;
   font-size: 20px;
@@ -113,12 +125,6 @@ footer p {
   margin: 0;
   color: #969696;
 }
-/* =======CHARTE DES GRANDEURS =======
-MOBILE : jusqu'à 640px;
-TABLETTE : entre 641px et 1024px;
-GRANDS ÉCRANS : plus que 1025px;
-*/
-/*=========================== STYLES MOBILES ======*/
 @media (max-width: 640px) {
   #global {
     text-align: center;
@@ -199,7 +205,6 @@ GRANDS ÉCRANS : plus que 1025px;
     display: none;
   }
 }
-/*=========================== STYLES TABLETTE ======*/
 @media (min-width: 641px) and (max-width: 1024px) {
   #global {
     text-align: center;
@@ -280,7 +285,6 @@ GRANDS ÉCRANS : plus que 1025px;
     display: table-cell;
   }
 }
-/*=========================== STYLES GRANDS ÉCRANS ======*/
 @media (min-width: 1025px) {
   #global {
     text-align: center;
