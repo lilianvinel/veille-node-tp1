@@ -15,6 +15,15 @@ function recupValeurNom(){
 		}
 		var url = "/rechercher/nom/" + valeurNom
 		return window.location.replace(url);
+	}
+
+function recupValeurTel(){
+		var valeurTel = document.querySelector(".valTel").value;
+		if(valeurTel == ""){
+			valeurTel = "vide"
+		}
+		var url = "/rechercher/telephone/" + valeurTel
+		return window.location.replace(url);
 	}		
 </script>
 
