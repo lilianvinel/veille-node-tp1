@@ -37,9 +37,47 @@ header{
 	color:white;
 }
 
+
+
+h1{
+	font-size: 3.5vh;
+	margin: 5vh 1vh 5vh 1vh;
+   	color: #2d2d2d;
+}
+
 ul{
 	display: flex;
     justify-content: space-around;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+li {
+	   float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+input[type=text] {
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 .membresDetruire{
@@ -98,60 +136,28 @@ GRANDS ÉCRANS : plus que 1025px;
 /*=========================== STYLES MOBILES ======*/
 @media (max-width: 640px) {
 	#global{
-
+		text-align: center;
 	}
 
 	header{
 		height : 70px;
 	}
-	
-	ul {
-	    list-style-type: none;
-	    margin: 0;
-	    padding: 0;
-	    overflow: hidden;
-	    background-color: #333;
-	}
-
-	li {
-	    float: left;
-	}
-
-	li a {
-	    display: block;
-	    color: white;
-	    text-align: center;
-	    padding: 14px 16px;
-	    text-decoration: none;
-	}
-
-	li a:hover {
-	    background-color: #111;
-	}
 
 	.formAjout {
-		margin: auto;
-		width: 40%;
-		padding-top: 100px;
+		margin:auto;
+    	width: 95%;
+    	display: flex;
+    	flex-wrap: wrap;
 	}
-	input[type=text] {
+
+	.ajout{
+		width: 95%;
+	}
+
+	#recherche{
 		width: 80%;
-		padding: 12px 20px;
-		margin: 8px 0;
-		display: inline-block;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
 	}
-	select {
-		width: 100%;
-		padding: 12px 20px;
-		margin: 8px 0;
-		display: inline-block;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-	}
+
 	input[type=submit] {
 		width: 100%;
 		background-color: #333333;
@@ -182,9 +188,6 @@ GRANDS ÉCRANS : plus que 1025px;
 
 	.fonctionnalite{
 		font-size: 100%;
-	}
-
-	button {
 		width: 100%;
 		background-color: #333333;
 		color: @color_1;
@@ -205,19 +208,12 @@ GRANDS ÉCRANS : plus que 1025px;
 	}
 
 	.envoiRecherche{
-		width: 10%;
+		width: 13%;
 		margin: 8px 2px;
 		background-color: #cccccc;
 		border-radius: 4px;
 		font-size: 120%;
 		padding:2%;
-	}
-
-	.envoiRecherche{
-		width: 15%;
-		margin: 8px 2px;
-		background-color: #cccccc;
-		border-radius: 4px
 	}
 
 
@@ -262,29 +258,6 @@ GRANDS ÉCRANS : plus que 1025px;
 	    background-color: #111;
 	}
 
-	form {
-		margin: auto;
-		width: 40%;
-		padding-top: 100px;
-	}
-	input[type=text] {
-		width: 100%;
-		padding: 12px 20px;
-		margin: 8px 0;
-		display: inline-block;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-	}
-	select {
-		width: 100%;
-		padding: 12px 20px;
-		margin: 8px 0;
-		display: inline-block;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-	}
 	input[type=submit] {
 		width: 100%;
 		background-color: #333333;
@@ -340,29 +313,6 @@ GRANDS ÉCRANS : plus que 1025px;
 	    background-color: #111;
 	}
 
-	form {
-		margin: auto;
-		width: 40%;
-		padding-top: 100px;
-	}
-	input[type=text] {
-		width: 100%;
-		padding: 12px 20px;
-		margin: 8px 0;
-		display: inline-block;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-	}
-	select {
-		width: 100%;
-		padding: 12px 20px;
-		margin: 8px 0;
-		display: inline-block;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-	}
 	input[type=submit] {
 		width: 100%;
 		background-color: #333333;
